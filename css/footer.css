@@ -1,0 +1,38 @@
+.footer{
+    border-top: 5px solid #000;
+    border-bottom: 1px solid #000;
+    height: 140px;
+    background: #fff;
+}
+.footer .f-ul{
+    display: flex;
+    justify-content: space-around;
+}
+.footer ul{
+    margin: 0;
+    padding: 0;
+}
+.footer ul li{
+    list-style: none;
+}
+.footer ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+}
+.footer ul li a:hover{
+    color: blueviolet;
+}
+.footer .f-ul .f-li{
+    width: 15%;
+    height: 140px;
+    float: left;
+    text-align: center;
+}
+.footer .f-ul .f-li h3{
+    font-size: 1.5rem;
+}
+    
+.footer .f-ul .f-li .partner{
+    width: 47%;
+}

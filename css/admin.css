@@ -1,0 +1,46 @@
+a{
+    text-decoration: none;
+}
+.main{
+    margin-top: 5%;
+}
+.left{
+    float: left;
+    width: 30%;
+}
+.right{
+    float: right;
+    width: 60%;
+}
+.right tr .clear{
+    clear: both;
+}
+.right table tr td{
+    border: 1px solid #000;
+    width: 25%;
+}
+.right table tr td h2{
+    text-align: center;
+    margin: 0;
+}
+.right table tr td img{
+    width: 20%;
+}
+.right .page{
+    padding: 33px;
+    text-align: center;
+}
+.right .page a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+    padding: 1%;
+    margin: 0;
+    border: 1px solid #000;
+    background-color: #fff;
+}
+.right .page a:hover{
+    background-color: #000;
+    color: #fff;
+}

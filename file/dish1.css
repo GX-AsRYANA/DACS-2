@@ -1,0 +1,412 @@
+.header{
+    width: 100%;
+    height: 168px;
+    background-color: white;
+    position: fixed;
+    top:0;
+    right:0;
+    z-index: 999;
+    box-sizing: border-box;
+ }
+
+ .search{
+     width: 100%;
+     height: 100px;
+     margin: 0;
+     
+ }
+.search input{
+    width: 35%;
+    height: 35px;
+    border: 2px solid black;
+    border-radius: 30px;
+ }
+ .icontimkiem{
+     position: relative;
+     right: 35px;
+     color: black;
+ }
+ .text{
+     text-decoration: none;
+     color: black;
+     font-family: Century Gothic;
+     margin-left: 2%;
+
+}
+.input {
+    text-indent: 10px;
+}
+ .iconmenu{
+     width: 3%;
+     margin-left: 2%;
+ }
+ .header-logo{
+     width: 14%;
+ }
+.mainlogo {
+    width: 100%;
+    margin-left: 38%;
+    margin-top: 10px;
+
+}
+
+ .fixed{
+     position: relative;
+     top: -4.6rem;
+     left: 32%;
+ }
+
+ ::placeholder{
+     font-family: Century Gothic;
+     text-align: center;
+ }
+ .title1{
+     width: 100%;
+     height: 60px;
+ }
+ .straight{
+     size: 1px;
+ }
+ .slogan{
+     font-family: Century Gothic;
+     color:black;
+     text-align: center;
+     font-size: 18px;
+ }
+ .h1{
+    width: auto;
+    height: 10%;
+    margin-right: 5%;
+    font-family: Century Gothic;
+    color: black;
+    text-align: left;
+    font-size: 40px;
+    margin-top: 200px;
+    margin-left: 5%;
+    /* background-color: rgb(220, 186, 103); */
+
+    
+}
+
+.body {
+    margin-bottom: 15%;
+}
+
+.main{
+    width:20%;
+    margin-left: 5%;
+    border: 5px solid rgba(6, 6, 6, 0.815);
+    float: left;
+}
+.mieu-ta {
+    font-size: 1.4rem;
+    margin-left: 27%;
+    margin-right: 4%;
+    margin-bottom: -18px;
+}
+ .footer{
+    border-top: 3px solid black;
+    margin-top: 5%;
+    padding-top: 12px;
+    font-family: Century Gothic;
+    z-index: 2;
+
+}
+.footer .grid .grid_row{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-column-gap: 7%;
+    margin-left: 5%;
+
+}
+.footer_heading{
+    font-size: 20px;
+    text-transform: uppercase;
+}
+li{
+    list-style: none;
+}
+ul{
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+}
+a{
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+}
+.footer_item :hover{
+    color: blueviolet;
+}
+.footer_item_icon{
+    font-size: 20px;
+}
+.partner{
+    width: 80px;
+    object-fit: contain;
+}
+#border{
+    border-bottom: 1px solid black;
+}
+a:hover{
+    color: blueviolet;
+}
+.p-img {
+    margin-left: 14px;
+}
+.t-head {
+    margin-left: 7.6%;
+}
+.preview{
+    width: 7%;
+    float: left;
+    margin-left: 17px;
+    border: 3px solid rgba(6, 6, 6, 0.815);
+    
+}
+.pe{
+    margin-left: 17px;
+}
+/* IPhone X chiều dọc */
+@media only screen and (min-width: 375px) and (max-width: 375px) {
+    .fixed {
+        position: relative;
+        top: -2.6rem;
+        left: 30%;
+    }
+    .search input {
+        width: 40%;
+        height: 20px;
+        border: 1px solid black;
+        border-radius: 20px;
+    }
+    .mainlogo {
+        width: 180%;
+        margin-left: 15%;
+        margin-top: 15%;
+    }
+    .text {
+        text-decoration: none;
+        color: black;
+        font-family: Century Gothic;
+        margin-left: 46%;
+    }
+    a {
+        text-decoration: none;
+        font-size: 12.9px;
+        color: black;
+    }
+    .t-head {
+        margin-left: -3.4%;
+        font-size: 10px;
+    }
+    .input {
+        text-indent: 0px;
+        margin-top: 5px;
+    }
+    ::placeholder{
+        font-family: Century Gothic;
+        text-align: center;
+        font-size: 9px;
+    }
+    .icontimkiem{
+        position: relative;
+        right: 23px;
+        color: black;
+    }
+    .search {
+        width: 100%;
+        height: 60px;
+        margin: 0;
+    }
+    .iconmenu {
+        margin-left: 2%;
+    }
+    .slogan {
+        margin: 0;
+        font-family: Century Gothic;
+        color: black;
+        text-align: center;
+        font-size: 15px;
+    }
+    .h1 {
+        width: 80%;
+        height: 0%;
+        margin-right: 5%;
+        font-family: Century Gothic;
+        color: black;
+        text-align: left;
+        font-size: 25px;
+        margin-top: 100px;
+        margin-left: 5%;
+        
+    }
+    .header{
+        height: 104px;
+    }
+    .ff,
+    .ff1{
+        font-size: 15px;
+    }
+    .body .title1 .img a .popup p{
+        margin: 0;
+        font-size: 8px;
+    }
+    .numberbar{
+        font-size: 13px;
+    }
+    .footer_heading {
+        font-size: 10px;
+    }
+    a{
+        font-size: 10px;
+    }
+    .footer_item_icon {
+        font-size: 10px;
+    }
+    .p-img {
+        margin-left: 5px;
+    }
+    .partner {
+        width: 45px;
+        object-fit: contain;
+    }
+    .footer {
+        border-top: 1px solid black;
+        padding: 0;
+    }
+    .footer_item {
+        margin-bottom: -7px;
+    }
+    .mieu-ta {
+        font-size: 8px;
+        margin-left: 32%;
+        margin-right: 22px;
+    }
+}
+/* IPhone X chiều ngang */
+@media only screen and (min-width: 812px) and (max-width: 812px) {
+    .mieu-ta {
+        font-size: 15px;
+        margin-left: 31%;
+        margin-right: 36px;
+    }
+    .fixed {
+        position: relative;
+        top: -2.6rem;
+        left: 30%;
+    }
+    .search input {
+        width: 40%;
+        height: 20px;
+        border: 1px solid black;
+        border-radius: 20px;
+    }
+    .mainlogo {
+        width: 83%;
+        margin-left: 40%;
+        margin-top: 9%;
+    }
+    .text {
+        text-decoration: none;
+        color: black;
+        font-family: Century Gothic;
+        margin-left: 1%;
+    }
+    a {
+        text-decoration: none;
+        font-size: 12.9px;
+        color: black;
+    }
+    .t-head {
+        margin-left: 19px;
+        font-size: 10px;
+    }
+    .input {
+        text-indent: 0px;
+        margin-top: 5px;
+    }
+    ::placeholder{
+        font-family: Century Gothic;
+        text-align: center;
+        font-size: 9px;
+    }
+    .icontimkiem{
+        position: relative;
+        right: 23px;
+        color: black;
+    }
+    .search {
+        width: 100%;
+        height: 60px;
+        margin: 0;
+    }
+    .iconmenu {
+        margin-left: 2%;
+        font-size: 13px;
+    }
+    .slogan {
+        margin: 0;
+        font-family: Century Gothic;
+        color: black;
+        text-align: center;
+        font-size: 15px;
+    }
+    .h1 {
+        width: 80%;
+        height: 0%;
+        margin-right: 5%;
+        font-family: Century Gothic;
+        color: black;
+        text-align: left;
+        font-size: 25px;
+        margin-top: 100px;
+        margin-left: 5%;
+        
+    }
+    .header{
+        height: 104px;
+    }
+    .ff,
+    .ff1{
+        font-size: 15px;
+    }
+    .body .title1 .img a .popup{
+        height: 10%;
+    }
+    .body .title1 .img a .popup p{
+        margin: 0;
+        font-size: 10px;
+    }
+    .numberbar{
+        font-size: 13px;
+    }
+    .footer_heading {
+        font-size: 10px;
+    }
+    a{
+        font-size: 10px;
+    }
+    .footer_item_icon {
+        font-size: 10px;
+    }
+    .p-img {
+        margin-left: 5px;
+    }
+    .partner {
+        width: 45px;
+        object-fit: contain;
+    }
+    .footer {
+        border-top: 1px solid black;
+        padding: 0;
+    }
+    .footer_item {
+        margin-bottom: -7px;
+    }
+}
