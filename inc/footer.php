@@ -4,13 +4,13 @@
             <h3 class="footer_heading">About</h3>
             <ul class="footer_list">
                 <li class="footer_item">
-                    <a href="">Support/Help</a>
+                    <a href="https://www.facebook.com/messages/t/100048067846254" target="blank">Support/Help</a>
                 </li>
                 <li class="footer_item">   
-                    <a href="">Contact</a>
+                    <a href="contact.php">Contact</a>
                 </li>
                 <li class="footer_item">    
-                    <a href="">Privacy Notice</a>
+                    <a href="privacy.php">Privacy Notice</a>
                 </li>
             </ul>
         </li>

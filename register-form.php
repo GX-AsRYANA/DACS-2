@@ -16,7 +16,7 @@ if(isset($_POST['submit'])){
         if($pass != $cpass){
             $error[]= 'Xác nhận mật khẩu sai';
         }else{
-            $insert = "INSERT INTO  user_db(email, password) VALUES('$email','$pass')";
+            $insert = "INSERT INTO  user_db(`email`, `password`,`role`) VALUES('$email', '$pass', '0')";
             mysqli_query($conn, $insert);
             header('location:login-form.php');
         }

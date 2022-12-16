@@ -6,15 +6,12 @@ $id='';
 //if(isset($_GET['id'])&&isset($_GET['file']))
 if (true)
 { 
-
-if (isset($_GET['id'])) $id = $_GET['id'];
-$file = $_GET['file'];
+    if (isset($_GET['id'])){
+        $hid = $_GET['id'];}
     if($_SERVER["REQUEST_METHOD"]=="POST"){
-
         $id=$_POST['hid'];
-        echo $id."XXXXXXXXXXX";
-        
         $ten=$_POST['ten'];
+        $id_ctn=$_POST['ctn'];
         if(!empty($ten)&&!empty($_FILES['ul-file'])){
                 $folder_path = 'img/';
                 $folder_img_add = '../../';
@@ -32,6 +29,7 @@ $file = $_GET['file'];
                 }
                 if(file_exists($file_path)){
                     echo 'file da ton tai';
+                    unlink($folder_img_add.$file['img']);
                     $flag_ok = false;
                 }
                 $ex = array('jpg','png','jpeg','pneg');
@@ -41,11 +39,15 @@ $file = $_GET['file'];
                     $flag_ok = false;
                 }
                 if($flag_ok){
-                    move_uploaded_file($_FILES['ul-file']['tmp_name'],$folder_img_add.$file_path);
                     $conn = mysqli_connect("localhost","root","","dacs");
                     if($conn->connect_error){
                         die("kết nối ko thành công:". $conn->connect_error);
                     }
+                    //xoa file anh
+                        $file_conn = mysqli_query($conn, "SELECT * FROM `food` WHERE `id`='$id'");
+                        $file = mysqli_fetch_array($file_conn);
+                        unlink($folder_img_add.$file['img']);
+                        move_uploaded_file($_FILES['ul-file']['tmp_name'],$folder_img_add.$file_path);
                     // //kiem tra csdl
                     // $alert = '';
                     //     $select = "SELECT * FROM food WHERE ten = '$ten' && img = '$file_path'";
@@ -54,9 +56,8 @@ $file = $_GET['file'];
                     //         $alert= 'Food exist';
                     // }else{
                         //SUA CSDL
-                        $sql="UPDATE `food` SET `ten`='$ten',`img`='$file_path' WHERE `id`='$id');";
+                        $sql="UPDATE `food` SET `ten`='$ten',`img`='$file_path',`id_ctn`='$id_ctn' WHERE `id`='$id'";
                         $kq= mysqli_query($conn, $sql);
-                        unlink($file);
                         $alert = 'UPDATED';
                     // }
                 }
@@ -121,22 +122,37 @@ $file = $_GET['file'];
 <div class="form">
 <h1>Sửa</h1>
 <form action="sua.php" method="post" enctype="multipart/form-data">
-    <input type="hidden" value="<?php echo $id; ?>" name="hid">
+    <input type="hidden" value="<?php echo $hid; ?>" name="hid">
     Tên sp:
     <input type="text" name="ten"></br>
     Ảnh:
-    <input type="file" name="ul-file">
-    <input type="submit" name="submit" value="ADD">
+    <input type="file" name="ul-file"></br>
+    From:
+    <select name="ctn">
+                <?php
+                    $conn = mysqli_connect("localhost","root","","dacs");
+                    if($conn->connect_error){
+                        die("kết nối ko thành công:". $conn->connect_error);
+                    }
+                    $adr="SELECT * FROM `continent`";
+                    $select= mysqli_query($conn, $adr);
+                    while($row_a=mysqli_fetch_array($select)){
+                        echo'<option value="'.$row_a['id'].'">'.$row_a['ten'].'</option>';
+                    }
+                ?>
+        </select></br>
+    <input type="submit" name="submit" value="UPDATE">
     <p><?php if(isset($alert)){ echo $alert;}?></p>
 </form>
 </div>
 <div class="display-food">
     <?php
+        if(isset($hid)){
         $conn = mysqli_connect("localhost","root","","dacs");
         if($conn->connect_error){
             die("kết nối ko thành công:". $conn->connect_error);
         }
-        $food = mysqli_query($conn, "SELECT * FROM `food` WHERE `id` = $id");
+        $food = mysqli_query($conn, "SELECT * FROM `food` WHERE `id` = $hid");
         $row = mysqli_fetch_array($food);
     ?>
     <table>
@@ -146,8 +162,9 @@ $file = $_GET['file'];
             <div class="clear"></div>
         </tr>
         <tr>
-            <td><img src="<?=$file?>" alt=""></td>
+            <td><img src="<?='../../'.$row['img']?>" alt=""></td>
             <td><h1><?=$row['ten']?></h1></td>
         </tr>
     </table>
+    <?php }?>
 </div>

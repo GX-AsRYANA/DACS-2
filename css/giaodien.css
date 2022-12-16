@@ -4,7 +4,7 @@
 }
 html{
     background-image: url(../Picture/bg.jpg);
-    background-size: cover;
+    background-size: auto;
 }
 /* form */
 .container{
@@ -123,6 +123,9 @@ html{
     background: #fff;
     position: fixed;
 }
+#header{
+    transition: top 0.6s;
+}
 .header ul li{
     list-style: none;
     float: left;
@@ -131,6 +134,7 @@ html{
 }
 .header ul .li-img{
     width: 30%;
+    height: 100px;
 }
 .header ul li #logo{
     width: 40%;
@@ -140,7 +144,7 @@ html{
     width: 45%;
 }
 .header ul .li-sb form{
-    padding: 5%;
+    padding: 5.5%;
 }
 .header ul .li-sb form .input{
     text-align: center;
@@ -162,13 +166,13 @@ html{
     height: 32px;
     width: 10%;
 }
-.header ul .li-sb form .find:hover{
+.header ul .li-sb .find:hover{
     background: #404066;
     color: #fff;
 }
 .header ul .inc{
-    width: 20%;
-    margin: 2%;
+    width: 21%;
+    margin: 1.9%;
 }
 .header ul .inc a{
     cursor: pointer;
@@ -194,12 +198,60 @@ html{
     height: 100px;
 }
 /* start */
+.new-food{
+    background: black;
+    width: 96%;
+    margin: 50px 2% 0 2%;
+    border-radius: 30px;
+    /* display: none; */
+}
+@keyframes h1 {
+    0%   {color: #fff;}
+    50%  {color: yellow;}
+    100% {color: red;}
+}
+.new-food .clear-dm p{
+    margin: 0 30px;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: h1 linear 0.5s infinite alternate;
+}
+.new-food ul{
+    list-style: none;
+}
+.new-food ul li{
+    background: #fff;
+    width: 15%;
+    border: 1px solid #fff;
+    float: left;
+    margin: 1% 0 2% 4%;
+}
+.new-food ul li:hover{
+    background: #777575;
+}
+.new-food ul li a{
+    text-decoration: none;
+}
+.new-food ul li a img{
+    width: 100%;
+    height: 250px;
+}
+.new-food ul li a p{
+    text-align: center;
+    color: #000;
+    font-size: 1.4rem;
+}
+.new-food .clear{
+    clear: both;
+}
 .danhmuc{
     background: linear-gradient(to right, rgb(199, 97, 190),rgb(243, 67, 67));
     height: 155px;
     width: 96%;
-    margin: 50px 2% 0 2%;
+    margin: 25px 2% 0 2%;
     border-radius: 30px;
+    /* display: none; */
 }
 .danhmuc .clear-dm{
     height: 46px;
@@ -234,6 +286,11 @@ html{
     text-align: center;
     color: #000;
     margin: 0;  
+    font-weight: bold;
+}
+.danhmuc #food{
+    margin: 0;
+    padding: 0;
 }
 .food{
     height: 800px;
@@ -262,7 +319,6 @@ html{
 .food .list-food ul li a img{
     width: 100%;
     height: 274px;
-    border: 1px solid #000;
 }
 .food .list-food ul li a p{
     text-align: center;
@@ -289,4 +345,199 @@ html{
 .food .page a:hover{
     background-color: #000;
     color: #fff;
+}
+/* chi tiết sản phẩm */
+.food_detail{
+    height: auto;
+    width: 96%;
+    margin: 2%;
+    background: #fff;
+    border-radius: 30px;
+}
+.food_detail .left{
+    width: 50%;
+    background: #000;
+    text-align: center;
+    border-top-left-radius: 29px;
+    float: left;
+}
+.food_detail .left h1{
+    color: #fff;
+}
+.food_detail .left img{
+    width: 50%;
+}
+.food_detail .right{
+    width: 50%;
+    float: right;
+}
+/* adr */
+.food_detail .right .adr{
+    float: left;
+    width: 40%;
+}
+.food_detail .right .adr p button{
+    color: white;
+    background: black;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.food_detail .right .adr p button:hover{
+    color: crimson;
+}
+.food_detail .right .adr ul li i{
+    float: left;
+}
+.food_detail .right .adr ul li p{
+    margin-left: 8%;
+}
+.food_detail .right .adr ul li p:hover{
+    text-decoration: underline;
+}
+/* ant-food */
+.food_detail .right .ant-food{
+    float: right;
+    width: 40%;
+}
+.food_detail .right .ant-food ul li{
+    text-align: center;
+    cursor: pointer;
+}
+.food_detail .right .ant-food ul li a{
+    text-decoration: none;
+}
+.food_detail .right .ant-food ul li img{
+    width: 35%;
+}
+.food_detail .right .clear{
+    clear: both;
+}
+/* mix */
+.food_detail .right .adr ul li:hover,
+.ant-food ul li:hover{
+    background: #f1f1f1;
+}
+
+.food_detail .right .adr,.ant-food{
+    margin: 5% 5%;
+}
+.food_detail .right .adr ul, .ant-food ul{
+    max-height: 431px;
+    overflow-y: scroll;
+    border: 1px solid #000;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+.food_detail .right .adr ul li,
+.ant-food ul li{
+    list-style: none;
+    padding: 1%;
+    border-bottom: 1px solid #000;
+    
+}
+/* comment */
+.food_detail .comment{
+    height: 450px;
+    border-bottom-right-radius: 29px;
+    border-bottom-left-radius: 29px;
+}
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+.row .display_comments ul{
+    overflow-y: scroll;
+}
+.row .display_comments ul li{
+    margin-bottom: 2%;
+    border-top: 1px solid #777575;
+}
+/* contact */
+.contact-parent{
+    background: #fff;
+    display:flex;
+}
+.contact-child{
+    display:flex;
+    flex:1;
+    box-shadow:0px 0px 10px -2px rgba(0,0,0,0.75);
+}
+.child1{
+    background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("https://cdn.pixabay.com/photo/2019/06/28/00/17/architecture-4303279_1280.jpg");
+    background-size:cover;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    color:#fff;
+    padding:100px 0;
+}
+.child1 p{
+    padding-left:20%;
+    font-size:20px;
+    text-shadow:0px 0px 2px #000;
+}
+ 
+.child1 p span{
+    font-size:16px;
+    color:#9df2fd;
+}
+.child2{
+    flex-direction:column;
+    justify-content:space-around;
+    align-items:center;
+}
+.inside-contact{
+    width:90%;
+    margin:0 auto;
+}
+ 
+.inside-contact h2{
+    text-transform:uppercase;
+    text-align:center;
+    margin-top:50px;
+}
+ 
+.inside-contact h3{
+    text-align:center;
+    font-size:16px;
+    color:#0085e2;
+}
+.inside-contact input, .inside-contact textarea{
+    width:100%;
+    background-color:#eee;
+    border:1px solid rgba(0,0,0,0.48);
+    padding:5px 10px;
+    margin-bottom:20px;
+}
+.inside-contact input[type=submit]{
+    background-color:#000;
+    color:#fff;
+    transition:0.2s;
+    border:2px solid #000;
+    margin:30px 0;
+}
+.inside-contact input[type=submit]:hover{
+    background-color:#fff;
+    color:#000;
+    transition:0.2s;
+}
+@media screen and (max-width:991px){
+    .contact-parent{
+        display:block;
+        width:100%;
+    }
+ 
+    .child1{
+        display:none;
+    }
+ 
+    .child2{
+        background-image:linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url("https://cdn.pixabay.com/photo/2019/06/28/00/17/architecture-4303279_1280.jpg");
+        background-size:cover;
+    }
+ 
+    .inside-contact input, .inside-contact textarea{
+        background-color:#fff;
+    }
 }

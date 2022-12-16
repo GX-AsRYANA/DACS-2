@@ -12,13 +12,16 @@ if(isset($_POST['submit'])){
         $select = "SELECT * FROM user_db WHERE email = '$email' && password = '$pass'";
         $result = mysqli_query($conn, $select);
         if(mysqli_num_rows($result)>0){
-            $_SESSION['username'] = $email;
-            if($email!='admin@1.com'){
-                $_SESSION['name'] = 'user';
-                header('location:giaodien.php');
-            }else{
-                $_SESSION['name'] = 'admin';
-                header('location:admin/admin.php');
+            $row = mysqli_fetch_array($result);
+            $_SESSION['name'] = $row['email'];
+            $_SESSION['role'] = $row['role'];
+            if ($row['role']==1){
+                $_SESSION['role'] = 'admin';
+                header("Location:admin/admin.php");
+            }
+            else{
+                $_SESSION['role'] = 'user';
+                header("Location:giaodien.php");
             }
         }else{  
             $error[] = 'Sai tài khoản hoặc mật khẩu';

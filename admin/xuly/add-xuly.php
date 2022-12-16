@@ -4,6 +4,7 @@
 // //     header('Location:dangnhap.php');
     if($_SERVER["REQUEST_METHOD"]=="POST"){     
         $ten=$_POST['ten'];
+        $id = $_POST['id-ctn'];
         if(!empty($ten)&&!empty($_FILES['ul-file'])){
                 $folder_path = 'img/';
                 $folder_img_add = '../../';
@@ -42,7 +43,7 @@
                         if(mysqli_num_rows($result)>0){
                             $alert= 'Food exist';
                     }else{
-                        $sql="INSERT INTO `food` (`ten`, `img`) VALUES ('$ten', '$file_path');";
+                        $sql="INSERT INTO `food` (`ten`, `img`, `id_ctn`) VALUES ('$ten', '$file_path', '$id');";
                         $kq= mysqli_query($conn, $sql);
                         $alert = 'UDLOADED';
                     }
@@ -57,7 +58,7 @@
     }
     // session_unset();
     // session_destroy();
-    // $_SESSION['alert']=$alert;
+    $_SESSION['alert']=$alert;
 
     header('location:../admin.php');
     // var_dump($_FILES);
