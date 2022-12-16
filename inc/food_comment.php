@@ -8,7 +8,7 @@
             $content=$_POST['comment'];
             if(!empty($content)){
                         $select=mysqli_query($conn, "INSERT INTO `comment`(`ten`, `noidung`, `id_food`) VALUES ('$ten','$content','$fid')");
-                        header("location:../food.php?id=$fid");
+                        header("location:../food.php?id=$fid #cmt");
             }
             else{
             $alert = 'vui lòng điền đầy đủ thông tin';
