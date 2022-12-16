@@ -5,6 +5,7 @@
 html{
     background-image: url(../Picture/bg.jpg);
     background-size: auto;
+
 }
 /* form */
 .container{
@@ -122,6 +123,7 @@ html{
     padding: 0;
     background: #fff;
     position: fixed;
+    z-index: 1;
 }
 #header{
     transition: top 0.6s;

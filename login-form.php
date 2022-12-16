@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
             }
             else{
                 $_SESSION['role'] = 'user';
-                header("Location:giaodien.php");
+                header("Location:index.php");
             }
         }else{  
             $error[] = 'Sai tài khoản hoặc mật khẩu';
@@ -43,7 +43,7 @@ if(isset($_POST['submit'])){
 <body>
 <div class="form-container">  
     <form action="" method="post">
-    <a href="giaodien.php"><li class="fa-solid fa-house home"></li></a>
+    <a href="index.php"><li class="fa-solid fa-house home"></li></a>
     <h3>Đăng nhập</h3>
     <?php 
             if(isset($error)){

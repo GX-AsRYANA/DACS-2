@@ -1,4 +1,17 @@
 <div class="sac"></div>
+<center><img src="Picture/banner.png" alt="Banner"></center>
+<div style="
+   position: absolute;
+   right: 15%;
+   bottom: 19.25rem;
+   left: 15%;
+   padding-top: 1.25rem;
+   padding-bottom: 1.25rem;
+   color: #fff;
+   text-align: center;
+   background: url('Picture/bg.jpg') no-repeat;
+   font-weight: bold;
+   font-size: 40px;"><p><i class="fa-solid fa-location-dot"></i> WELCOME TO FOODMAP ĐÀ NẴNG</p></div>
 <div class="new-food">
       <div class="clear-dm"><p>NEW !!</p></div>
       <ul>
