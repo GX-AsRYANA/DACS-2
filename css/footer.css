@@ -36,3 +36,21 @@
 .footer .f-ul .f-li .partner{
     width: 40%;
 }
+/* RESPONSIVE */
+@media screen and (max-width:375px){
+    .footer {
+        height: 100px;
+    }
+    .footer .f-ul .f-li {
+        height: 100px;
+    }
+    .footer .f-ul .f-li h3 {
+        font-size: 1rem;
+    }
+    .footer .f-ul .f-li .partner {
+        width: 90%;
+    }
+    .footer ul li a {
+        font-size: 0.6rem;
+    }
+}

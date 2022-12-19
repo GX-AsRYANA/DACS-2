@@ -1,7 +1,4 @@
 <?php
-// session_start();
-// // if($_SESSION['role']!='admin')
-// //     header('Location:dangnhap.php');
     if($_SERVER["REQUEST_METHOD"]=="POST"){     
         $ten=$_POST['ten'];
         $id = $_POST['id-ctn'];
@@ -13,21 +10,20 @@
                 if(isset($_POST["submit"])) {
                     $check = getimagesize($_FILES['ul-file']["tmp_name"]);
                     if($check !== false) {
-                    //   echo "File is an image - " . $check["mime"] . ".";
                     $flag_ok = true;
                     } else {
-                    echo "File is not an image.";
+                    $alert = "File is not an image.";
                     $flag_ok = false;
                     }
                 }
                 if(file_exists($file_path)){
-                    echo 'file da ton tai';
+                    $alert = 'file da ton tai';
                     $flag_ok = false;
                 }
                 $ex = array('jpg','png','jpeg','pneg');
                 $file_type = strtolower(pathinfo($file_path, PATHINFO_EXTENSION));
                 if(!in_array($file_type,$ex)){
-                    echo 'file khong hop le';
+                    $alert = 'file khong hop le';
                     $flag_ok = false;
                 }
                 if($flag_ok){
@@ -50,17 +46,13 @@
                 }
                 else{
                     $alert = '';
-                    echo 'khong upload duoc';
+                    $alert = 'khong upload duoc';
                 }
         }
         else
         $alert = 'vui lòng điền đầy đủ thông tin';
     }
-    // session_unset();
-    // session_destroy();
-    $_SESSION['alert']=$alert;
-
+    session_start();
+    $_SESSION['alert'] = $alert;
     header('location:../admin.php');
-    // var_dump($_FILES);
-    // move_uploaded_file($_FILES['ul-file']['tmp_name'],'../img/'.$_FILES['ul-file']['name']);
 ?>

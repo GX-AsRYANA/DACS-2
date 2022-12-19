@@ -18,12 +18,15 @@
                 }else{
                     $sql="INSERT INTO `address`(`ten`, `diachi`, `type`, `fid`) VALUES ('$name','$adr','$type','$fid')";
                     $kq= mysqli_query($conn, $sql);
-                    header('location:admin.php');
                     $alert = 'Success';
+                    header('location:admin.php');
                 }  
         }
-        else
-        $alert ='vui lòng điền đầy đủ thông tin';
+        else{
+        $alert ='vui lòng điền đầy đủ thông tin';}
+        session_start();
+        $_SESSION['alert2'] = $alert;
+        header('location:admin.php');
     }
 ?>
 <h1>Địa điểm</h1>
@@ -64,6 +67,6 @@
         <tr><td>
     <input type="submit" name="submit" value="ADD"></td></tr>
     </table>
-    <!-- <p><,?php if(isset($_SESSION['alert'])){ echo $_SESSION['alert'];}?></p> -->
-    <?php echo $alert;?>
+    <p><?php if(isset($_SESSION['alert2'])){ echo $_SESSION['alert2'];}?></p>
+    <!-- </?php echo $alert;?> -->
 </form>

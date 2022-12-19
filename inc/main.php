@@ -1,17 +1,6 @@
 <div class="sac"></div>
 <center><img src="Picture/banner.png" alt="Banner"></center>
-<div style="
-   position: absolute;
-   right: 15%;
-   bottom: 19.25rem;
-   left: 15%;
-   padding-top: 1.25rem;
-   padding-bottom: 1.25rem;
-   color: #fff;
-   text-align: center;
-   background: url('Picture/bg.jpg') no-repeat;
-   font-weight: bold;
-   font-size: 40px;"><p><i class="fa-solid fa-location-dot"></i> WELCOME TO FOODMAP ĐÀ NẴNG</p></div>
+<div class="banner"><p><i class="fa-solid fa-location-dot"></i> WELCOME TO FOODMAP ĐÀ NẴNG</p></div>
 <div class="new-food">
       <div class="clear-dm"><p>NEW !!</p></div>
       <ul>
@@ -52,10 +41,10 @@
          <ul>
             <?php
             $item_per_page = !empty($_GET['per_page'])?$_GET['per_page']:10;
-            $current_page = !empty($_GET['page'])?$_GET['page']:1    ;
+            $current_page = !empty($_GET['page'])?$_GET['page']:1;
             $offset = ($current_page - 1) * $item_per_page;
             $food = mysqli_query($conn, "SELECT * FROM `food` WHERE `id_ctn`=".$_GET['id']." LIMIT ".$item_per_page." OFFSET ".$offset."");
-            $totalRecords = mysqli_query($conn, "SELECT * FROM `food`"); 
+            $totalRecords = mysqli_query($conn, "SELECT * FROM `food`WHERE `id_ctn`=".$_GET['id'].""); 
             $totalRecords = $totalRecords->num_rows;
             $totalPages = ceil($totalRecords/$item_per_page);
             while($row = mysqli_fetch_array($food)){
@@ -80,7 +69,7 @@
             $current_page = !empty($_GET['page'])?$_GET['page']:1    ;
             $offset = ($current_page - 1) * $item_per_page;
             $food = mysqli_query($conn, "SELECT * FROM `food` WHERE `ten` LIKE '%$txt%' LIMIT ".$item_per_page." OFFSET ".$offset."");
-            $totalRecords = mysqli_query($conn, "SELECT * FROM `food`"); 
+            $totalRecords = mysqli_query($conn, "SELECT * FROM `food` WHERE `ten` LIKE '%$txt%'"); 
             $totalRecords = $totalRecords->num_rows;
             $totalPages = ceil($totalRecords/$item_per_page);
             while($row = mysqli_fetch_array($food)){

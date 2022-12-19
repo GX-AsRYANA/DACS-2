@@ -42,9 +42,7 @@
     <!-- #respond -->
    <div class="display_comments" style="float:right; width: 68%;">
    <h3>PREVIOUS COMMENT</h3>
-        <ul style="    background: #fff;
-    list-style: none;
-    height: 350px;">
+        <ul class="d-cmt">
             <?php
                 $id = '';
                 if (isset($_GET['id'])){

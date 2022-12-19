@@ -14,10 +14,7 @@
         </div>
         <div class="right">
             <div class="adr">
-                <p style="text-align: center;
-                        font-size: 30px;
-                        background: black;
-                        color: #fff;">Địa chỉ <button onclick="map()"><i class="fa-solid fa-map-location-dot"></i></button></p>
+                <p class="n_dc">Địa chỉ <button onclick="map()"><i class="fa-solid fa-map-location-dot"></i></button></p>
                 <ul>
                     <?php
                         $adr_arr=mysqli_query($conn, "SELECT * FROM `address` WHERE `fid`='$id'");
@@ -31,10 +28,7 @@
                 </ul>
             </div>
             <div class="ant-food">
-            <p style="text-align: center;
-                        font-size: 30px;
-                        background: black;
-                        color: #fff;">Món ăn khác</p>
+            <p class="n_dc">Món ăn khác</p>
                 <ul>
                     <?php
                             $a_food=mysqli_query($conn, "SELECT * FROM `food` WHERE `id`!='$id'");
