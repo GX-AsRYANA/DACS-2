@@ -49,7 +49,13 @@
             <div class="bl">
                 <div>
                 <p></p>
-                <h4> Bình luận</h4>
+                <h4>
+                <?php
+                    $slcmt=mysqli_query($conn, "SELECT *FROM `post_comment` WHERE `post_id`=".$_GET['id']."");
+                    $count = mysqli_num_rows($slcmt);
+                    echo $count;
+               ?>   
+                Bình luận</h4>
                 <p></p>
                 </div>
                 <ul>
