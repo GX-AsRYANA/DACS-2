@@ -3,6 +3,7 @@
     border-bottom: 1px solid #000;
     height: 140px;
     background: #fff;
+    bottom: 0%;
 }
 .footer .f-ul{
     display: flex;

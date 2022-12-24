@@ -33,4 +33,5 @@ $(document).ready(function(){
             $('.de-class').html(data);
         });
     });
+    
 });

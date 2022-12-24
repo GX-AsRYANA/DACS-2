@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Picture/logo2.jpg">
     <link rel="stylesheet" href="font/fontawesome-free-6.1.1-web/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/giaodien.css">
@@ -29,6 +30,9 @@
                 </form>
             </li>
             <li class="inc">
+                    <i style="cursor: pointer;" id="theme" class="fa-solid fa-sun"></i>
+                    <!-- <input type="checkbox" name="" class="theme"  id="light-dark"> -->
+                    <a href="posts.php"><i class="fa-solid fa-pen-to-square"></i>Bài viết</a>
                     <?php
                         // echo $_SESSION['role'];
                         if(!isset($_SESSION['role']))
@@ -62,4 +66,13 @@
         }
         prevScrollpos = currentScrollPos;
     }
+    $('#theme').click('change', function(){
+        $(this).toggleClass('open');
+        $(this).toggleClass('fa-sun fa-moon');
+        if($(this).hasClass('open')){
+            document.body.classList.add('dark');
+        }else{
+            document.body.classList.remove('dark');
+        }
+    });
 </script>

@@ -59,21 +59,44 @@ a{
     background-color: #000;
     color: #fff;
 }
-.main_ql_cmt{
+.main_ql_cmt_right{
+    max-height: 450px;
     margin-top: 5%;
+    width: 50%;
+    float: right;
+    overflow-y: scroll;
 }
-.main_ql_cmt ul{
+.main_ql_cmt_right ul{
     margin-top: 1%;
     list-style: none;
     max-height: 431px;
     overflow-y: scroll;
     border: 1px solid rgb(149, 111, 111);
 }
-.main_ql_cmt ul li{
+.main_ql_cmt_right ul li{
     border: 1px solid transparent;
 }
-.main_ql_cmt ul li p{
+.main_ql_cmt_right ul li p{
     margin: 0;
     padding: 10;
     background: #f1f1f1;
+}
+.main_ql_cmt_left{
+    margin-top: 5%;
+    width: 50%;
+    float: right;
+}
+.main_ql_cmt_right table tbody td{
+    width: 25%;
+}
+.main_ql_cmt_right table tbody img{
+    width: 25%;
+}
+.main_ql_cmt_right table tbody img:hover{
+    transform: scale(4);
+    transition: 0.3s;
+}
+.main_ql_cmt_right table tbody{
+    max-height: 600px;
+    overflow-y: scroll;
 }
